@@ -1,0 +1,38 @@
+body {
+    font-family: var(--main-font);
+    background-color: #010208;
+}
+
+[class*="__container"] {
+    max-width: 1245px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+.btn-text {
+    background: var(linear-gradient(134deg, #BC3CD8 0%, #C54B8C 100%));
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.text {
+    color: rgba(227, 228, 230, 0.55);
+    font-feature-settings: 'clig' off, 'liga' off;
+
+    /* Heading 1/Light */
+    font-style: normal;
+    font-weight: 300;
+    line-height: 150%; /* 84px */
+    letter-spacing: -1.12px;
+}
+
+.accent-text {
+    color: var(--accent-color);
+    font-family: Work Sans;
+    font-size: 56px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 1.5;
+    letter-spacing: -1.12px;
+}

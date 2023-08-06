@@ -1,0 +1,81 @@
+.header {
+    padding: 35px 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 5;
+    background-color: #010208;
+    // .header__container
+
+    &__container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    // .header__logo
+
+    &__logo {
+    }
+
+    // .header__menu
+
+    &__menu {
+    }
+}
+.menu {
+
+    // .menu__list
+
+    &__list {
+        display: flex;
+        align-items: center;
+
+        gap: 32px;
+    }
+
+    // .menu__item
+
+    &__item {
+
+    }
+
+    &__link {
+        &:hover {
+            background: var(--primary, linear-gradient(134deg, #BC3CD8 0%, #C54B8C 100%));
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    }
+
+    // .menu__link
+
+    &__link {
+        font-weight: 600;
+        font-size: 14px;
+        line-height: 1.5;
+        text-transform: uppercase;
+        color: var(--accent-color);
+        position: relative;
+        &:hover::before {
+            visibility: visible;
+            opacity: 1;
+        }
+        // Подчеркивание у ссылок в навигации через псевдоэлемент before
+        &::before {
+            content: "";
+            width: 9px;
+            height: 5px;
+            border-radius: 10px;
+            background-color: #fff;
+            position: absolute;
+            left: 50%;
+            bottom: -8px;
+            visibility: hidden;
+            opacity: 0;
+            transform: translateX(-50%);
+        }
+    }
+}

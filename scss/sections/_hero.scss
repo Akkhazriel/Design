@@ -1,0 +1,41 @@
+.hero {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    // .hero__container
+
+    &__container {
+    }
+
+    // .hero__title
+
+    &__title {
+        text-align: center;
+
+        color: var(--main-color);
+        font-family: Work Sans;
+        font-size: 56px;
+        font-style: normal;
+        font-weight: 300;
+        line-height: 1.5%; /* 84px */
+        letter-spacing: -1.12px;
+        max-width: 1000px;
+    }
+
+    // .hero__arrow
+
+    &__arrow {
+        background: none;
+        border: none;
+        width: 40px;
+        height: 40px;
+        background: transparent url('../../img/arrows/arrow-down.svg') center center no-repeat;
+        position: absolute;
+        left: 50%;
+        bottom: 42px;
+        transform: translateX(-50%);
+        cursor: pointer;
+    }
+}

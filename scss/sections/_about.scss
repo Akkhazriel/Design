@@ -1,0 +1,72 @@
+.about {
+    padding: 75px 0;
+    // .about__container
+
+    &__container {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+    }
+
+    // .about__text
+
+    &__text {
+        color: var(--accent-color);
+
+        /* Heading 3/Semibold */
+        font-size: 32px;
+        font-weight: 600;
+        line-height: 1.5;
+
+        span {
+            color: var(--main-color);
+
+            /* Heading 3/Light */
+            font-size: 32px;
+            font-weight: 300;
+            line-height: 1.5; /* 48px */
+        }
+    }
+
+    // .about__title
+
+    &__title {
+        color: var(--accent-color);
+
+        /* Heading 4/Semibold */
+        font-size: 24px;
+        font-weight: 600;
+        line-height: 1.5; /* 36px */
+        text-transform: uppercase;
+    }
+
+    // .about__gallery
+
+    &__gallery {
+        flex: 0 0 50%;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(4, 1fr);
+    }
+
+    // .about__img
+
+    &__img {
+    }
+
+    &__img:nth-child(1) {
+        grid-column: 1/2;
+        grid-row: 2/4;
+    }
+
+    &__img:nth-child(2) {
+        grid-column: 2/3;
+        grid-row: 1/4;
+    }
+
+    &__img:nth-child(3) {
+        grid-column: 2/3;
+        grid-row: 3/5;
+    }
+
+}

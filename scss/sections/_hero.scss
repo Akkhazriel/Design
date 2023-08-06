@@ -4,6 +4,7 @@
     align-items: center;
     justify-content: center;
     position: relative;
+    min-height: 400px;
     // .hero__container
 
     &__container {
@@ -22,6 +23,29 @@
         line-height: 1.5%; /* 84px */
         letter-spacing: -1.12px;
         max-width: 1000px;
+
+        @media (max-width: 981px) {
+            font-size: 30px;
+            max-width: 550px;
+
+            span {
+                font-size: 30px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            font-size: 24px;
+            span {
+                font-size: 24px;
+            }
+        }
+
+        @media (max-width: 390px) {
+            font-size: 18px;
+            span {
+                font-size: 18px;
+            }
+        }
     }
 
     // .hero__arrow

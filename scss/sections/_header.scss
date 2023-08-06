@@ -26,13 +26,80 @@
 }
 .menu {
 
+    &__icon {
+        display: block;
+        width: 30px;
+        height: 18px;
+        position: relative;
+        z-index: 5;
+        cursor: pointer;
+        display: none;
+
+        &.active {
+            span {
+                transform: scale(0);
+                z-index: 1000;
+            }
+            span:first-child {
+                transform: rotate(-45deg);
+                top: calc(50% - 1px);
+                z-index: 1000;
+            }
+            span:last-child {
+                transform: rotate(45deg);
+                bottom: calc(50% - 1px);
+                z-index: 1000;
+            }
+        }
+
+        // АДАПТИВ бургер
+        @media (max-width: 576px) {
+            display: block;
+        }
+
+        span {
+            position: absolute;
+            width: 100%;
+            height: 2px;
+            left: 0;
+            top: calc(50% - 1px);
+            background-color: #fff;
+            transition: all 0.2s ease-in;
+            &:first-child {
+                top: 0;
+            }
+            &:last-child {
+                top: auto;
+                bottom: 0;
+            }
+        }
+    }
     // .menu__list
 
     &__list {
         display: flex;
         align-items: center;
+        transition: all 0.2s ease-in;
+        &.active {
+            transform: translateX(0);
+        }
+
 
         gap: 32px;
+
+        // АДАПТИВ меню
+        @media (max-width: 576px) {
+            transform: translateX(-100%);
+            position: absolute;
+            top: 0;
+            left: 0;
+            background-color: #010208;
+            width: 100%;
+            height: 100vh;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
     }
 
     // .menu__item
@@ -41,27 +108,41 @@
 
     }
 
+    // .menu__link
+
     &__link {
-        &:hover {
+        &.active {
             background: var(--primary, linear-gradient(134deg, #BC3CD8 0%, #C54B8C 100%));
             background-clip: text;
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
-    }
 
-    // .menu__link
+        &.active:before {
+            visibility: visible;
+            opacity: 1;
+        }
 
-    &__link {
         font-weight: 600;
         font-size: 14px;
         line-height: 1.5;
         text-transform: uppercase;
         color: var(--accent-color);
         position: relative;
+        &:hover {
+            background: var(--primary, linear-gradient(134deg, #BC3CD8 0%, #C54B8C 100%));
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
         &:hover::before {
             visibility: visible;
             opacity: 1;
+        }
+
+        @media (max-width: 576px) {
+            font-size: 30px;
         }
         // Подчеркивание у ссылок в навигации через псевдоэлемент before
         &::before {
